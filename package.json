@@ -13,7 +13,7 @@
         "backend",
         "middleware"
     ],
-    "author": "Adriano",
+    "author": "Ana Laura",
     "license": "ISC",
     "dependencies": {
         "cors": "^2.8.5",
@@ -21,5 +21,6 @@
     },
     "devDependencies": {
         "nodemon": "^3.0.1"
-    }
+    },
+    "type": "commonjs"
 }

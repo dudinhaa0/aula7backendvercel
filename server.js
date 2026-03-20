@@ -128,7 +128,7 @@ app.use(errorHandler);
 
 // ─── 7. Iniciando o Servidor ──────────────────────────────────
 // Definimos a porta como constante para facilitar a mudança depois.
-const PORTA = 3000;
+const PORTA = process.env.PORT || 3000;
 
 // app.listen() inicia o servidor na porta definida.
 // O callback (função passada como parâmetro) é executado
@@ -137,19 +137,21 @@ app.listen(PORTA, () => {
     console.log('');
     console.log('🚀 ================================');
     console.log(`🚀 Servidor rodando!`);
-    console.log(`🚀 Acesse: http://localhost:${PORTA}`);
+    console.log(`🚀 Porta local: ${PORTA}`);
     console.log('🚀 ================================');
     console.log('');
     console.log('📋 Rotas disponíveis:');
-    console.log(`   GET    http://localhost:${PORTA}/api/categorias`);
-    console.log(`   POST   http://localhost:${PORTA}/api/categorias`);
-    console.log(`   GET    http://localhost:${PORTA}/api/produtos`);
-    console.log(`   GET    http://localhost:${PORTA}/api/produtos/:id`);
-    console.log(`   POST   http://localhost:${PORTA}/api/produtos`);
-    console.log(`   PUT    http://localhost:${PORTA}/api/produtos/:id`);
-    console.log(`   DELETE http://localhost:${PORTA}/api/produtos/:id`);
+    console.log(`   GET    /api/categorias`);
+    console.log(`   POST   /api/categorias`);
+    console.log(`   GET    /api/produtos`);
+    console.log(`   GET    /api/produtos/:id`);
+    console.log(`   POST   /api/produtos`);
+    console.log(`   PUT    /api/produtos/:id`);
+    console.log(`   DELETE /api/produtos/:id`);
     console.log('');
     console.log('💣 Rota de teste de erro:');
-    console.log(`   GET    http://localhost:${PORTA}/api/produtos/erro-teste`);
+    console.log(`   GET    /api/produtos/erro-teste`);
     console.log('');
 });
+
+module.exports = app;
