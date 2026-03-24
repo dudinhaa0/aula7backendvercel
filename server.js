@@ -38,10 +38,8 @@
 
 // ─── 1. Importações das Dependências ─────────────────────────
 // express: framework web para criar o servidor e as rotas
+require('dotenv').config();
 const express = require('express');
-
-// cors: permite que o App Mobile (em outro domínio) acesse nossa API
-// Sem CORS, o navegador bloquearia as requisições por segurança!
 const cors = require('cors');
 
 
